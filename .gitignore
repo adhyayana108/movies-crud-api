@@ -1,26 +1,26 @@
 # Compiled binaries
-server
-go-movies-crud
+/movies-api
+/bin/
 *.exe
 *.exe~
 *.dll
 *.so
 *.dylib
-
-# Test binary, built with `go test -c`
+ 
+# Test binaries and coverage output
 *.test
-
-# Output of the go coverage tool
 *.out
-
-# Go workspace file
-go.work
-go.work.sum
-
-# IDE / editor
+coverage.html
+ 
+# Go build/module cache artifacts if ever vendored locally
+/vendor/
+ 
+# Environment files — never commit real secrets or local overrides
+.env
+.env.local
+ 
+# Editor/OS cruft
 .vscode/
 .idea/
 *.swp
-
-# OS
 .DS_Store
