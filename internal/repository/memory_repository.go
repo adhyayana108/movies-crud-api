@@ -9,6 +9,14 @@ import (
 	"github.com/adhyayana108/movies-crud-api/internal/domain"
 )
 
+type MovieRepository interface {
+	GetAll(context.Context) ([]domain.Movie, error)
+	GetByID(context.Context, string) (domain.Movie, error)
+	Create(context.Context, domain.Movie) (domain.Movie, error)
+	Update(context.Context, string, domain.Movie) (domain.Movie, error)
+	Delete(context.Context, string) error
+}
+
 type MemoryRepository struct {
 	mu     sync.RWMutex
 	movies map[string]domain.Movie
@@ -94,4 +102,4 @@ func (r *MemoryRepository) Delete(_ context.Context, id string) error {
 	return nil
 }
 
-
+var _ MovieRepository = (*MemoryRepository)(nil)
