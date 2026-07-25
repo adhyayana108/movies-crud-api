@@ -95,8 +95,3 @@ func (r *MemoryRepository) Delete(_ context.Context, id string) error {
 }
 
 
-// compile-time interface implementation check removed because the
-// MovieRepository interface is defined elsewhere with a different name.
-// If you have a repository interface in this package, re-add the proper
-// assertion here, e.g.:
-// var _ YourInterfaceName = (*MemoryRepository)(nil)
